@@ -16,6 +16,7 @@
 ### Python fundamentals
 
 1. [Install Python](install-python.md) - Set up environment for productivity.
+2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, switch, write your first go program and write your first test. Sub-test syntax and closures.
 
 ### Build an application
 
