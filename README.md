@@ -1,8 +1,8 @@
 # Learn Python with TDD
 
-## Formats
+_Learn test-driven development with Python_
 
-- [Gitbook](https://learn-python-with-tdd.pybootcamp.com)
+This project is based and inspired by [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/)
 
 ## Why
 
@@ -18,24 +18,6 @@
 1. [Install Python](install-python.md) - Set up environment for productivity.
 2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, switch, write your first go program and write your first test. Sub-test syntax and closures.
 
-### Build an application
-
-Now that you have hopefully digested the _Python Fundamentals_ section you have a solid grounding of a majority of Python's language features and how to do TDD.
-
-This next section will involve building an application.
-
-Each chapter will iterate on the previous one, expanding the application's functionality as our product owner dictates.
-
-New concepts will be introduced to help facilitate writing great code but most of the new material will be learning what can be accomplished from Python's standard library.
-
-### Questions and answers
-
-I often run in to questions on the internets like
-
-> How do I test my amazing function that does x, y and z
-
-If you have such a question raise it as an issue on github and I'll try and find time to write a short chapter to tackle the issue. I feel like content like this is valuable as it is tackling people's _real_ questions around testing.
-
 ## Contributing
 
 * _This project is work in progress_ If you would like to contribute, please do get in touch.
@@ -46,17 +28,23 @@ If you have such a question raise it as an issue on github and I'll try and find
 
 * People who are interested in picking up Python.
 * People who already know some Python, but want to explore testing with TDD.
+* People who want to explore Python and Goland from a TDD perspective (https://quii.gitbook.io/learn-go-with-tests/).
 
 ## What you'll need
 
 * A computer!
-* [Installed Python](https://python.org/)
-* A text editor
+* [Installed Python](https://www.python.org/)
+* A text editor (VS Code, Py Charm....)
 * Some experience with programming. Understanding of concepts like `if`, variables, functions etc.
 * Comfortable with using the terminal
 
 ## Feedback
 
-* Add issues/submit PRs [here](https://github.com/py-bootcamp/learn-python-with-tdd) or [tweet me @pybootcamp](https://twitter.com/pybootcamp)
+* Add issues/submit PRs [here](https://github.com/py-bootcamp/learn-python-with-tdd) or [tweet me @PyBootcamp](https://twitter.com/pybootcamp)
+
+## Formats
+
+- [Gitbook](https://learn-python-with-tdd.pybootcamp.com)
+
 
 [MIT license](LICENSE.md)
