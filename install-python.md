@@ -11,7 +11,7 @@ $ python --version
 Python 3.7.6
 ```
 
-Any Python version > 3.6 is good.
+Any Python version > `3.6` is good.
 
 ## Python Environment
 
@@ -42,21 +42,21 @@ deactivate
 ```
 
 ### Python dependencies
-Python's dependecies are managed through [pip](https://packaging.python.org/tutorials/installing-packages/).
+Python's dependencies are managed through [pip](https://packaging.python.org/tutorials/installing-packages/).
 
-Once you created a new virtual envirmeonet and activated it, we can run
+Once you created a new virtual environment and activated it, we can run
 
 ```sh
 pip install pytest
 ```
 
-Pytest is a test runner, and the the only external dependecy we need.
+Pytest is a test runner, and the the only external dependency we need.
 
 ## Python Editor
 
-Editors are like ice creams flavors, the choice is really personal and you'll have to find one that fits your need. If you don't have one I suggest you to check [VS Codium](https://github.com/VSCodium/vscodium), [VS Code](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/).
+Editors are like ice creams flavors, the choice is really personal and you'll have to find one that fits your need. If you don't have one I suggest you to check [VSCodium](https://github.com/VSCodium/vscodium), [VSCode](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/).
 
-VS Codium and VS Code have a really good Python extension (https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+Both VSCodium and VSCode have a really good Python extension (https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 
 ## Refactoring and your tooling
 
