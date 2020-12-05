@@ -1,19 +1,29 @@
-import pytest
-
-from .hello import Hello
+from hello import Hello
 
 
-@pytest.mark.parametrize(
-    "name, language, want",
-    [
-        ("Christian", "", "Hello, Christian"),
-        ("", "", "Hello, World"),
-        ("Elodie", "Spanish", "Hola, Elodie"),
-        ("Lauren", "French", "Bonjour, Lauren"),
-        ("Francesca", "Italian", "Ciao, Francesca"),
-    ],
-)
-def test_hello(name, language, want):
-    got = Hello(name, language)
+def test_hello_without_name():
+    got = Hello()
+    want = "Hello, World"
+
+    assert got == want
+
+
+def test_hello_with_name():
+    got = Hello("Christian")
+    want = "Hello, Christian"
+
+    assert got == want
+
+
+def test_hello_with_name_in_spanish():
+    got = Hello("Christian", "Spanish")
+    want = "Hola, Christian"
+
+    assert got == want
+
+
+def test_hello_with_name_in_french():
+    got = Hello("Christian", "French")
+    want = "Bonjour, Christian"
 
     assert got == want

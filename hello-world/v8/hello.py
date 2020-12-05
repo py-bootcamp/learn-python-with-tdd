@@ -1,29 +1,19 @@
-spanish = "Spanish"
-french = "French"
-italian = "Italian"
-englishHelloPrefix = "Hello"
-spanishHelloPrefix = "Hola"
-frenchHelloPrefix = "Bonjour"
-italianHelloPrefix = "Ciao"
+ENGLISH_HELLO_PREFIX = "Hello"
+LANGUAGES = {
+    "Spanish": "Hola",
+    "French": "Bonjour",
+}
 
 
 def prefix(language: str) -> str:
-    prefix = englishHelloPrefix
-
-    if language == spanish:
-        prefix = spanishHelloPrefix
-
-    if language == french:
-        prefix = frenchHelloPrefix
-
-    if language == italian:
-        prefix = italianHelloPrefix
-
-    return prefix
+    return LANGUAGES.get(language, ENGLISH_HELLO_PREFIX)
 
 
-def Hello(name: str, language: str) -> str:
-    """Hello returns a personalised greeting in a given language."""
+def Hello(name: str = None, language: str = None) -> str:
+    """
+    Hello returns a personalized greeting.
+    Defaulting to Hello, world if an empty name is passed.
+    """
     if not name:
         name = "World"
 

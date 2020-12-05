@@ -32,7 +32,7 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 
 * A computer!
 * [Installed Python](https://www.python.org/)
-* A text editor (VS Code, Py Charm....)
+* A text editor (VS Codium, VS Code, PyCharm....)
 * Some experience with programming. Understanding of concepts like `if`, variables, functions etc.
 * Comfortable with using the terminal
 

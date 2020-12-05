@@ -1,27 +1,22 @@
-spanish = "Spanish"
-french = "French"
-italian = "Italian"
-englishHelloPrefix = "Hello"
-spanishHelloPrefix = "Hola"
-frenchHelloPrefix = "Bonjour"
-italianHelloPrefix = "Ciao"
+SPANISH = "Spanish"
+FRENCH = "French"
+ENGLISH_HELLO_PREFIX = "Hello"
+SPANISH_HELLO_PREFIX = "Hola"
+FRENCH_HELLO_PREFIX = "Bonjour"
 
 
-def Hello(name: str, language: str) -> str:
-    """Hello returns a personalised greeting in a given language."""
+def Hello(name: str = None, language: str = None) -> str:
+    """Hello returns a personalized greeting in a given language."""
     if not name:
         name = "World"
 
-    if language == spanish:
-        return f"{spanishHelloPrefix}, {name}"
+    if language == SPANISH:
+        return f"{SPANISH_HELLO_PREFIX}, {name}"
 
-    if language == french:
-        return f"{frenchHelloPrefix}, {name}"
+    if language == FRENCH:
+        return f"{FRENCH_HELLO_PREFIX}, {name}"
 
-    if language == italian:
-        return f"{italianHelloPrefix}, {name}"
-
-    return f"{englishHelloPrefix}, {name}"
+    return f"{ENGLISH_HELLO_PREFIX}, {name}"
 
 
-print(Hello("world", ""))
+print(Hello("world"))

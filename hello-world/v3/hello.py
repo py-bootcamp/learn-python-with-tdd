@@ -1,5 +1,5 @@
 def Hello(name: str) -> str:
-    """Hello returns a personalised greeting."""
+    """Hello returns a personalized greeting."""
     return f"Hello, {name}"
 
 

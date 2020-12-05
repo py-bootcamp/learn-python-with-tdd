@@ -1,12 +1,15 @@
-englishHelloPrefix = "Hello"
+ENGLISH_HELLO_PREFIX = "Hello"
 
 
-def Hello(name: str) -> str:
-    """Hello returns a personalised greeting, defaulting to Hello, world if an empty name is passed."""
+def Hello(name: str = None) -> str:
+    """
+    Hello returns a personalized greeting.
+    Defaulting to Hello, world if an empty name is passed.
+    """
     if not name:
         name = "World"
 
-    return f"{englishHelloPrefix}, {name}"
+    return f"{ENGLISH_HELLO_PREFIX}, {name}"
 
 
 print(Hello("world"))

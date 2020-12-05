@@ -24,6 +24,8 @@ Citing the [Python Packaging User Guide](https://packaging.python.org/tutorials/
 and that's the approach with want to have, we will use `venv` to create a new Python virtual environment:
 
 ```sh
+mkdir learn-python-with-tdd
+cd learn-python-with-tdd
 python -m venv .venv
 ```
 
@@ -35,7 +37,7 @@ source .venv/bin/activate
 
 To deactivate
 
-```
+```sh
 deactivate
 ```
 
@@ -44,7 +46,7 @@ Python's dependecies are managed through [pip](https://packaging.python.org/tuto
 
 Once you created a new virtual envirmeonet and activated it, we can run
 
-```
+```sh
 pip install pytest
 ```
 
