@@ -1,5 +1,6 @@
-from .hello import Hello
 import pytest
+
+from .hello import Hello
 
 
 @pytest.mark.parametrize(

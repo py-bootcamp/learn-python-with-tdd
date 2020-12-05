@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Learn Python with TDD](gb-readme.md)
+* [Learn Python with TDD](README.md)
 
 ## Python fundamentals
 
