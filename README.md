@@ -1,13 +1,11 @@
-# Learn Python with TDD
-
-_Learn test-driven development with Python_
+# Learn Python with Test-Driven Development
 
 This project is based and inspired by [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/)
 
 ## Why
 
 * Explore the Python language by writing tests
-* **Get a grounding with TDD**. Python is a good language for learning TDD because it is a simple language to learn and testing is built-in
+* **Get a grounding with TDD**. Python is a good language for learning TDD because it is a simple language to learn and has a powerful testing library
 * Be confident that you'll be able to start writing robust, well-tested systems in Python
 * [Watch a video, or read about why unit testing and TDD is important](why.md)
 
@@ -16,7 +14,7 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 ### Python fundamentals
 
 1. [Install Python](install-python.md) - Set up environment for productivity.
-2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, switch, write your first go program and write your first test. Sub-test syntax and closures.
+2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, write your first Python program and write your first test. Sub-test syntax and closures.
 
 ## Contributing
 
@@ -28,7 +26,7 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 
 * People who are interested in picking up Python.
 * People who already know some Python, but want to explore testing with TDD.
-* People who want to explore Python and Goland from a TDD perspective (https://quii.gitbook.io/learn-go-with-tests/).
+* People who want to explore Python and Golang from a TDD perspective (https://quii.gitbook.io/learn-go-with-tests/).
 
 ## What you'll need
 
