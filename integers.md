@@ -29,9 +29,11 @@ test_adder.py:1: in <module>
 E   ModuleNotFoundError: No module named 'adder'
 ```
 
+Right! Python is looking for a file named `adder.py` with an `add` function inside.
+
 ## Write the minimal amount of code for the test to run and check the failing test output
 
-Write enough code to satisfy the compiler _and that's all_ - remember we want to check that our tests fail for the correct reason.
+Let's create an `adder.py` and write enough code to satisfy the compiler _and that's all_ - remember we want to check that our tests fail for the correct reason.
 
 ```python
 def add(x: int, y: int) -> int:
