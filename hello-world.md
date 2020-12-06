@@ -6,11 +6,11 @@ It is traditional for your first program in a new language to be [Hello, World](
 
 In the [previous chapter](install-python.md#python-environment) we discussed how to setup your local environment.
 
-It's time to create a new folder for our project: `learn-python-with-tdd/hello-world`.
+It's time to create a new folder for our project.
 
 So if you're on a unix based OS and you could run `mkdir -p learn-python-with-tdd/hello-world`.
 
-For subsequent chapters, you can make a new folder with whatever name you like to put the code in e.g `learn-python-with-tdd/integers` for the next chapter might be sensible. Some readers of this book like to make an enclosing folder for all the work such as "learn-python-with-tdd/hello". In short, it's up to you how you structure your folders.
+For subsequent chapters, you can make a new folder with whatever name you like to put the code in e.g `learn-python-with-tdd/integers` for the next chapter might be sensible. it's up to you how you structure your folders.
 
 Create a file in this directory called `hello.py` and write this code. To run it type `python hello.py`.
 
@@ -20,11 +20,11 @@ print("Hello World")
 
 ## How it works
 
-Python programs end in `*.py`, `print` is a built-in function, always available without need to import it.
+Python programs end in `*.py`, `print` is a built-in function, always available without having to import it.
 
 ## How to test
 
-How do you test this? It is good to separate your "domain" code from the outside world \(side-effects\). The `print` is a side effect \(printing to a text stream file\) and the string we send in is our domain.
+How do you test this? It is good to separate your _domain_ code from the outside world \(side-effects\). The `print` is a side effect \(printing to a text stream file\) and the string we send in is our domain.
 
 So let's separate _these concerns_ so it's easier to test
 
@@ -37,9 +37,11 @@ def Hello() -> str:
 print(Hello())
 ```
 
-We have created a new function with `def` called `Hello`, this function doesn't accept any parameter but returns a string. This means this function returns a `string`.
+We have created a new function with `def` called `Hello`, this function doesn't accept any parameter but returns a `string` (str).
 
-Python is a dynamically-typed language, while types are optionals and not used at runtime they help understanding your code.
+> Python is a dynamically-typed language, while types are optionals and not used at runtime they help describing your code.
+
+On line 2 we have a docstring, which is how you can document your code in Python.
 
 Now create a new file called `hello_test.py` where we are going to write a test for our `Hello` function
 
@@ -71,17 +73,17 @@ We've covered some new topics:
 
 #### Declaring variables
 
-We're declaring some variables with the syntax `varName = value`, which lets us re-use some values in our test for readability.
+We're declaring some variables with the syntax `var_name = value`, which lets us re-use some values in our test for readability.
 
 #### Assertions
 
-We are calling `assert`, `assert` is a reserver keyword in Python, you can't use `assert = 1` and is not a function in Python but a statement. `assert` evaluates the condition `got == want` and if it's false raises an error.
+We are calling the `assert` statement. `assert` is a reserved keyword in Python, you can't type `assert = 1`. `assert` evaluates the condition `got == want` and if it's false raises an error.
 
 In the test above we are evaluating that both strings are the same.
 
 ### Hello, YOU
 
-Now that we have a test we can iterate on our software _safely_. We can improve `def Hello()` or add new functionalities while being sure that old features works the same way.
+Now that we have a test we can iterate on our software _safely_. We can improve `def Hello()` or add new functionalities while being sure that old features work the same way.
 
 In the last example we wrote the test _after_ the code had been written just so you could get an example of how to write a test and declare a function. From this point on we will be _writing tests first_.
 
@@ -108,7 +110,7 @@ Now run `pytest`, you should have an error
 E       TypeError: Hello() takes 0 positional arguments but 1 was given
 ```
 
-Python provides great error messages. In this case the Python is telling you what you need to do to continue. We have to change our function `Hello` to accept an argument.
+Python provides great error messages. In this case Python is telling you what you need to do to continue. We have to change our function `Hello` to accept an argument.
 
 Edit the `Hello` function to accept an argument of type str (string)
 
@@ -118,7 +120,7 @@ def Hello(name: str) -> str:
     return "Hello, world"
 ```
 
-If you try and run your tests again your `hello.py` will fail to compile because you're not passing an argument. Send in "world" to make it pass.
+If you try and run `python hello.py` will fail because you're not passing an argument. Send in "world" to make it pass.
 
 ```python
 print(Hello("world"))
@@ -130,9 +132,9 @@ Now when you run your tests you should see something like
 AssertionError: assert 'Hello, world' == 'Hello, Christian'
 ```
 
-We finally have a compiling program but it is not meeting our requirements according to the test.
+We finally have a working program but it is not meeting our requirements according to the test.
 
-Let's make the test pass by using the name argument and interpolate it with `Hello,`
+Let's make the test pass by interpolating the parameter `name` inside the return
 
 ```python
 def Hello(name: str) -> str:
@@ -155,10 +157,6 @@ There's not a lot to refactor here, but we can introduce another language featur
 ### Constants
 
 You can't really define constants in Python, but there's a convention on how to represent variables that are meant to be constant: `all capital letters with underscores separating words` ([more here](https://www.python.org/dev/peps/pep-0008/#constants))
-
-```python
-ENGLISH_HELLO_PREFIX = "Hello"
-```
 
 We can now refactor our code
 
@@ -200,8 +198,7 @@ ENGLISH_HELLO_PREFIX = "Hello"
 
 
 def Hello(name: str = None) -> str:
-    """
-	Hello returns a personalized greeting.
+    """Hello returns a personalized greeting.
 	defaulting to Hello, world if an empty name is passed.
 	"""
     if not name:
@@ -210,11 +207,9 @@ def Hello(name: str = None) -> str:
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 ```
 
-The function signature `Hello(name: str = None)` is different!
+The function signature is different!
 
-`= None` tells Python that in case we don't pass a value for `name` when we call the function that should be equal to `None`.
-
-In other words we are defining a default value.
+`name: str = None` tells Python that in case we don't pass a value for `name` when we call the function we should use `None` as default.
 
 If we run our tests we should see it satisfies the new requirement and we haven't accidentally broken the other functionality.
 
@@ -228,7 +223,6 @@ check in the lovely version of our code with its test.
 Let's go over the cycle again
 
 * Write a test
-* Make the compiler pass
 * Run the test, see that it fails and check the error message is meaningful
 * Write enough code to make the test pass
 * Refactor
@@ -259,7 +253,7 @@ def test_hello_in_spanish():
     assert got == want
 ```
 
-Remember not to cheat! _Test first_. When you try and run the test, the compiler _should_ complain because you are calling `Hello` with two arguments rather than one.
+Remember not to cheat! _Test first_. When you try and run the test, Python _should_ complain because you are calling `Hello` with two arguments rather than one.
 
 ```text
     def test_hello_in_spanish():
@@ -271,8 +265,7 @@ Fix the problems by adding another string argument to `def Hello`
 
 ```python
 def Hello(name: str = None, language: str) -> str:
-    """
-	Hello returns a personalized greeting.
+    """Hello returns a personalized greeting.
 	Defaulting to Hello, world if an empty name is passed.
 	"""
     if not name:
@@ -281,7 +274,7 @@ def Hello(name: str = None, language: str) -> str:
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 ```
 
-When you try and run the test again it will complain again about the order of the parameters in our `Hello` function
+When you run the test again it will complain again about the order of the parameters in our `Hello` function
 
 ```text
 E       def Hello(name: str = None, language: str) -> str:
@@ -293,8 +286,7 @@ We can fix this error by making `language` optional as well
 
 ```python
 def Hello(name: str = None, language: str = None) -> str:
-    """
-	Hello returns a personalized greeting.
+    """Hello returns a personalized greeting.
 	Defaulting to Hello, world if an empty name is passed.
 	"""
     if not name:
@@ -303,7 +295,7 @@ def Hello(name: str = None, language: str = None) -> str:
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 ```
 
-Now all your tests should compile _and_ pass, apart from our new scenario
+Now all your tests should pass, apart from our new scenario
 
 ```text
 AssertionError: assert 'Hello, Christian' == 'Hola, Christian'
@@ -313,8 +305,7 @@ We can use `if` here to check the language is equal to "Spanish" and if so chang
 
 ```python
 def Hello(name: str = None, language: str = None) -> str:
-    """
-	Hello returns a personalized greeting.
+    """Hello returns a personalized greeting.
 	Defaulting to Hello, world if an empty name is passed.
 	"""
     if not name:
@@ -337,8 +328,7 @@ SPANISH_HELLO_PREFIX = "Hola"
 
 
 def Hello(name: str = None, language: str = None) -> str:
-    """
-	Hello returns a personalized greeting.
+    """Hello returns a personalized greeting.
 	Defaulting to Hello, world if an empty name is passed.
 	"""
     if not name:
@@ -377,7 +367,7 @@ def Hello(name: str = None, language: str = None) -> str:
 
 ## `Dict`
 
-When you have lots of `if` statements checking a particular value and returning it is common to use a `dictionary` to hold values. A dictionary is a collection on keys/values. We can use a `dictionary` to refactor the code to make it easier to read and more extensible if we wish to add more language support later
+When you have lots of `if` statements checking a particular value and returning it is common to use a `dictionary` to hold values. A dictionary is a collection of keys/values. We can use a `dictionary` to refactor the code to make it easier to read and more extensible if we wish to add more language support later
 
 ```python
 ENGLISH_HELLO_PREFIX = "Hello"
@@ -388,8 +378,7 @@ LANGUAGES = {
 
 
 def Hello(name: str = None, language: str = None) -> str:
-    """
-    Hello returns a personalized greeting.
+    """Hello returns a personalized greeting.
     Defaulting to Hello, world if an empty name is passed.
     """
     if not name:
@@ -400,7 +389,7 @@ def Hello(name: str = None, language: str = None) -> str:
     return f"{prefix}, {name}"
 ```
 
-A dictionary offers lots of handy functionalities, in this case we can look for a key inside (language) and in case is not available return a default (`ENGLISH_HELLO_PREFIX`).
+A dictionary offers lots of handy functionalities, in this case we are using the `get` method look for a key (`language`) and in case is not available return a default (`ENGLISH_HELLO_PREFIX`).
 
 Write a test to now include a greeting in the language of your choice and you should see how simple it is to extend our _amazing_ function.
 
@@ -414,8 +403,7 @@ def prefix(language: str) -> str:
 
 
 def Hello(name: str = None, language: str = None) -> str:
-    """
-    Hello returns a personalized greeting.
+    """Hello returns a personalized greeting.
     Defaulting to Hello, world if an empty name is passed.
     """
     if not name:
@@ -432,8 +420,6 @@ Sometimes it is useful to group tests around a "thing" and then have parameters 
 
 A benefit of this approach is you can set up shared code that can be used in the other tests.
 
-There is repeated code when we check if the message is what we expect.
-
 Refactoring is not _just_ for the production code!
 
 It is important that your tests _are clear specifications_ of what the code needs to do.
@@ -444,6 +430,7 @@ We can and should refactor our tests.
 import pytest
 
 from hello import Hello
+
 
 def test_hello_without_name():
     got = Hello()
@@ -475,19 +462,9 @@ def test_hello_with_name_and_language(name, language, want):
 
 What have we done here?
 
-We refactored test with `pytest.parametrize`, a way to parametrize your test using a collection of values.
+We refactored test with `parametrize`, a way to parametrize your test using a collection of values.
 
 `parametrize` is a utils coming from the `pytest` suite, it reduces duplication by running the same test with different parameters.
-
-A few new concepts:
-
-* In our function signature we have made a _named return value_ `(prefix string)`.
-* This will create a variable called `prefix` in your function.
-  * It will be assigned the "zero" value. This depends on the type, for example `int`s are 0 and for strings it is `""`.
-    * You can return whatever it's set to by just calling `return` rather than `return prefix`.
-  * This will display in the Go Doc for your function so it can make the intent of your code clearer.
-* `default` in the switch case will be branched to if none of the other `case` statements match.
-* The function name starts with a lowercase letter. In Go public functions start with a capital letter and private ones start with a lowercase. We don't want the internals of our algorithm to be exposed to the world, so we made this function private.
 
 ## Wrapping up
 

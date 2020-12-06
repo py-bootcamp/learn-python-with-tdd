@@ -50,7 +50,7 @@ Once you created a new virtual environment and activated it, we can run
 pip install pytest
 ```
 
-Pytest is a test runner, and the the only external dependency we need.
+[Pytest](https://docs.pytest.org/en/stable/) is a test runner, and the the only external dependency we need.
 
 ## Python Editor
 

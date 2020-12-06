@@ -14,7 +14,7 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 ### Python fundamentals
 
 1. [Install Python](install-python.md) - Set up environment for productivity.
-2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, write your first Python program and write your first test.
+2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, dict, write your first Python program and write your first test.
 
 ## Contributing
 
