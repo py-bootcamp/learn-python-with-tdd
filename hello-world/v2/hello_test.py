@@ -2,7 +2,7 @@ from hello import Hello
 
 
 def test_hello():
-    got = Hello()
+    got = hello()
     want = "Hello, world"
 
     assert got == want

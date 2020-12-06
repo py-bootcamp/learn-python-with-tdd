@@ -5,8 +5,8 @@ SPANISH_HELLO_PREFIX = "Hola"
 FRENCH_HELLO_PREFIX = "Bonjour"
 
 
-def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str = None) -> str:
+    """Return a personalized greeting.
     Defaulting to `Hello, World` if no name and language are passed.
     """
     if not name:
@@ -21,4 +21,4 @@ def Hello(name: str = None, language: str = None) -> str:
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 
 
-print(Hello("world"))
+print(hello("world"))

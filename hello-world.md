@@ -29,12 +29,12 @@ How do you test this? It is good to separate your _domain_ code from the outside
 So let's separate _these concerns_ so it's easier to test
 
 ```python
-def Hello() -> str:
-    """Hello returns a greeting."""
+def hello() -> str:
+    """Return a greeting."""
     return "Hello, world"
 
 
-print(Hello())
+print(hello())
 ```
 
 We have created a new function with `def` called `Hello`, this function doesn't accept any parameter but returns a `string` (str).
@@ -50,7 +50,7 @@ from hello import Hello
 
 
 def test_hello():
-    got = Hello()
+    got = hello()
     want = "Hello, world"
 
     assert got == want
@@ -83,7 +83,7 @@ In the test above we are evaluating that both strings are the same.
 
 ### Hello, YOU
 
-Now that we have a test we can iterate on our software _safely_. We can improve `def Hello()` or add new functionalities while being sure that old features work the same way.
+Now that we have a test we can iterate on our software _safely_. We can improve `def hello()` or add new functionalities while being sure that old features work the same way.
 
 In the last example we wrote the test _after_ the code had been written just so you could get an example of how to write a test and declare a function. From this point on we will be _writing tests first_.
 
@@ -96,7 +96,7 @@ from hello import Hello
 
 
 def test_hello():
-    got = Hello("Christian")
+    got = hello("Christian")
     want = "Hello, Christian"
 
     assert got == want
@@ -106,8 +106,8 @@ Now run `pytest`, you should have an error
 
 ```text
     def test_hello():
->       got = Hello("Christian")
-E       TypeError: Hello() takes 0 positional arguments but 1 was given
+>       got = hello("Christian")
+E       TypeError: hello() takes 0 positional arguments but 1 was given
 ```
 
 Python provides great error messages. In this case Python is telling you what you need to do to continue. We have to change our function `Hello` to accept an argument.
@@ -115,15 +115,15 @@ Python provides great error messages. In this case Python is telling you what yo
 Edit the `Hello` function to accept an argument of type str (string)
 
 ```python
-def Hello(name: str) -> str:
-    """Hello returns a greeting."""
+def hello(name: str) -> str:
+    """Return a greeting."""
     return "Hello, world"
 ```
 
 If you try and run `python hello.py` will fail because you're not passing an argument. Send in "world" to make it pass.
 
 ```python
-print(Hello("world"))
+print(hello("world"))
 ```
 
 Now when you run your tests you should see something like
@@ -137,8 +137,8 @@ We finally have a working program but it is not meeting our requirements accordi
 Let's make the test pass by interpolating the parameter `name` inside the return
 
 ```python
-def Hello(name: str) -> str:
-    """Hello returns a personalized greeting."""
+def hello(name: str) -> str:
+    """Return a personalized greeting."""
     return f"Hello, {name}"
 ```
 
@@ -164,8 +164,8 @@ We can now refactor our code
 ENGLISH_HELLO_PREFIX = "Hello"
 
 
-def Hello(name: str) -> str:
-    """Hello returns a personalized greeting."""
+def hello(name: str) -> str:
+    """Return a personalized greeting."""
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 ```
 
@@ -179,13 +179,13 @@ Start by writing a new failing test
 
 ```python
 def test_hello_without_name():
-    got = Hello()
+    got = hello()
 	want = "Hello, World"
 
     assert got == want
 
 def test_hello_with_name():
-    got = Hello("Christian")
+    got = hello("Christian")
 	want = "Hello, Christian"
 
     assert got == want
@@ -197,8 +197,8 @@ Now that we have a well-written failing test, let's fix the code, using an `if`.
 ENGLISH_HELLO_PREFIX = "Hello"
 
 
-def Hello(name: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -247,7 +247,7 @@ Write a test for a user passing in Spanish. Add it to the existing suite.
 
 ```python
 def test_hello_in_spanish():
-    got = Hello("Christian", "Spanish")
+    got = hello("Christian", "Spanish")
 	want = "Hola, Christian"
 
     assert got == want
@@ -257,15 +257,15 @@ Remember not to cheat! _Test first_. When you try and run the test, Python _shou
 
 ```text
     def test_hello_in_spanish():
->       got = Hello("Christian", "Spanish")
-E       TypeError: Hello() takes from 0 to 1 positional arguments but 2 were given
+>       got = hello("Christian", "Spanish")
+E       TypeError: hello() takes from 0 to 1 positional arguments but 2 were given
 ```
 
 Fix the problems by adding another string argument to `def Hello`
 
 ```python
-def Hello(name: str = None, language: str) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -279,7 +279,7 @@ Docstrings should follow function's behaviors, this is a good time to update fun
 When you run the test again it will complain again about the order of the parameters in our `Hello` function
 
 ```text
-E       def Hello(name: str = None, language: str) -> str:
+E       def hello(name: str = None, language: str) -> str:
 E                ^
 E   SyntaxError: non-default argument follows default argument
 ```
@@ -287,8 +287,8 @@ E   SyntaxError: non-default argument follows default argument
 We can fix this error by making `language` optional as well
 
 ```python
-def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str = None) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -306,8 +306,8 @@ AssertionError: assert 'Hello, Christian' == 'Hola, Christian'
 We can use `if` here to check the language is equal to "Spanish" and if so change the message
 
 ```python
-def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str = None) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -329,8 +329,8 @@ ENGLISH_HELLO_PREFIX = "Hello"
 SPANISH_HELLO_PREFIX = "Hola"
 
 
-def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str = None) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -351,8 +351,8 @@ def Hello(name: str = None, language: str = None) -> str:
 You may have written something that looks roughly like this
 
 ```python
-def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str = None) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -381,8 +381,8 @@ LANGUAGES = {
 }
 
 
-def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str = None) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -406,8 +406,8 @@ def prefix(language: str) -> str:
     return LANGUAGES.get(language, ENGLISH_HELLO_PREFIX)
 
 
-def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting.
+def hello(name: str = None, language: str = None) -> str:
+    """Return a personalized greeting.
 	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
@@ -437,14 +437,14 @@ from hello import Hello
 
 
 def test_hello_without_name():
-    got = Hello()
+    got = hello()
     want = "Hello, World"
 
     assert got == want
 
 
 def test_hello_with_name():
-    got = Hello("Christian")
+    got = hello("Christian")
     want = "Hello, Christian"
 
     assert got == want
@@ -459,7 +459,7 @@ def test_hello_with_name():
     ],
 )
 def test_hello_with_name_and_language(name, language, want):
-    got = Hello(name, language)
+    got = hello(name, language)
 
     assert got == want
 ```
@@ -489,6 +489,6 @@ By now you should have some understanding of:
 * Writing the smallest amount of code to make it pass so we know we have working software
 * _Then_ refactor, backed with the safety of our tests to ensure we have well-crafted code that is easy to work with
 
-In our case we've gone from `Hello()` to `Hello("name")`, to `Hello("name", "French")` in small, easy to understand steps.
+In our case we've gone from `hello()` to `hello("name")`, to `hello("name", "French")` in small, easy to understand steps.
 
 This is of course trivial compared to "real world" software but the principles still stand. TDD is a skill that needs practice to develop but by being able to break problems down into smaller components that you can test you will have a much easier time writing software.

@@ -1,6 +1,6 @@
-def Hello() -> str:
-    """Hello returns a greeting."""
+def hello() -> str:
+    """Return a greeting."""
     return "Hello, world"
 
 
-print(Hello())
+print(hello())
