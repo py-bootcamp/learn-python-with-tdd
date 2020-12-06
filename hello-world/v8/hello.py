@@ -11,7 +11,7 @@ def prefix(language: str) -> str:
 
 def Hello(name: str = None, language: str = None) -> str:
     """Hello returns a personalized greeting.
-    Defaulting to Hello, world if an empty name is passed.
+    Defaulting to `Hello, World` if no name and language are passed.
     """
     if not name:
         name = "World"

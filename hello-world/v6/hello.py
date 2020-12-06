@@ -6,7 +6,9 @@ FRENCH_HELLO_PREFIX = "Bonjour"
 
 
 def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting in a given language."""
+    """Hello returns a personalized greeting.
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 

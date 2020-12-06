@@ -199,7 +199,7 @@ ENGLISH_HELLO_PREFIX = "Hello"
 
 def Hello(name: str = None) -> str:
     """Hello returns a personalized greeting.
-	defaulting to Hello, world if an empty name is passed.
+	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
         name = "World"
@@ -266,13 +266,15 @@ Fix the problems by adding another string argument to `def Hello`
 ```python
 def Hello(name: str = None, language: str) -> str:
     """Hello returns a personalized greeting.
-	Defaulting to Hello, world if an empty name is passed.
+	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
         name = "World"
 
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 ```
+
+Docstrings should follow function's behaviors, this is a good time to update function's docstring.s
 
 When you run the test again it will complain again about the order of the parameters in our `Hello` function
 
@@ -287,7 +289,7 @@ We can fix this error by making `language` optional as well
 ```python
 def Hello(name: str = None, language: str = None) -> str:
     """Hello returns a personalized greeting.
-	Defaulting to Hello, world if an empty name is passed.
+	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
         name = "World"
@@ -306,7 +308,7 @@ We can use `if` here to check the language is equal to "Spanish" and if so chang
 ```python
 def Hello(name: str = None, language: str = None) -> str:
     """Hello returns a personalized greeting.
-	Defaulting to Hello, world if an empty name is passed.
+	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
         name = "World"
@@ -329,7 +331,7 @@ SPANISH_HELLO_PREFIX = "Hola"
 
 def Hello(name: str = None, language: str = None) -> str:
     """Hello returns a personalized greeting.
-	Defaulting to Hello, world if an empty name is passed.
+	Defaulting to `Hello, World` if no name and language are passed.
 	"""
     if not name:
         name = "World"
@@ -350,7 +352,9 @@ You may have written something that looks roughly like this
 
 ```python
 def Hello(name: str = None, language: str = None) -> str:
-    """Hello returns a personalized greeting in a given language."""
+    """Hello returns a personalized greeting.
+	Defaulting to `Hello, World` if no name and language are passed.
+	"""
     if not name:
         name = "World"
 
@@ -379,8 +383,8 @@ LANGUAGES = {
 
 def Hello(name: str = None, language: str = None) -> str:
     """Hello returns a personalized greeting.
-    Defaulting to Hello, world if an empty name is passed.
-    """
+	Defaulting to `Hello, World` if no name and language are passed.
+	"""
     if not name:
         name = "World"
 
@@ -404,8 +408,8 @@ def prefix(language: str) -> str:
 
 def Hello(name: str = None, language: str = None) -> str:
     """Hello returns a personalized greeting.
-    Defaulting to Hello, world if an empty name is passed.
-    """
+	Defaulting to `Hello, World` if no name and language are passed.
+	"""
     if not name:
         name = "World"
 
