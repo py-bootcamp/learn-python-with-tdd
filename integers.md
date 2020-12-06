@@ -1,6 +1,6 @@
 # Integers
 
-**[You can find all the code for this chapter here](https://github.com/py-bootcamp/learn-python-with-tdd/tree/main/integers)**
+**[You can find all the code for this chapter here](https://github.com/py-bootcamp/learn-python-with-tdd/tree/master/integers)**
 
 Integers work as you would expect. Let's write an `add` function to try things out. Create a test file called `test_adder.py` and write this code.
 
