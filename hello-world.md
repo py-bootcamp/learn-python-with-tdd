@@ -37,16 +37,16 @@ def hello() -> str:
 print(hello())
 ```
 
-We have created a new function with `def` called `Hello`, this function doesn't accept any parameter but returns a `string` (str).
+We have created a new function with `def` called `hello`, this function doesn't accept any parameter but returns a `string` (str).
 
 > Python is a dynamically-typed language, while types are optionals and not used at runtime they help describing your code.
 
 On line 2 we have a docstring, which is how you can document your code in Python.
 
-Now create a new file called `hello_test.py` where we are going to write a test for our `Hello` function
+Now create a new file called `hello_test.py` where we are going to write a test for our `hello` function
 
 ```python
-from hello import Hello
+from hello import hello
 
 
 def test_hello():
@@ -69,7 +69,7 @@ We've covered some new topics:
 
 #### Imports
 
-`from hello import Hello` imports the `Hello` function from the `hello.py` inside our test file.
+`from hello import hello` imports the `hello` function from the `hello.py` inside our test file.
 
 #### Declaring variables
 
@@ -92,7 +92,7 @@ Our next requirement is to let us specify the recipient of the greeting.
 Let's start by capturing these requirements in a test. This is basic test driven development and allows us to make sure our test is _actually_ testing what we want. When you retrospectively write tests there is the risk that your test may continue to pass even if the code doesn't work as intended.
 
 ```python
-from hello import Hello
+from hello import hello
 
 
 def test_hello():
@@ -112,7 +112,7 @@ E       TypeError: hello() takes 0 positional arguments but 1 was given
 
 Python provides great error messages. In this case Python is telling you what you need to do to continue. We have to change our function `Hello` to accept an argument.
 
-Edit the `Hello` function to accept an argument of type str (string)
+Edit the `hello` function to accept an argument of type str (string)
 
 ```python
 def hello(name: str) -> str:
@@ -253,7 +253,7 @@ def test_hello_in_spanish():
     assert got == want
 ```
 
-Remember not to cheat! _Test first_. When you try and run the test, Python _should_ complain because you are calling `Hello` with two arguments rather than one.
+Remember not to cheat! _Test first_. When you try and run the test, Python _should_ complain because you are calling `hello` with two arguments rather than one.
 
 ```text
     def test_hello_in_spanish():
@@ -261,7 +261,7 @@ Remember not to cheat! _Test first_. When you try and run the test, Python _shou
 E       TypeError: hello() takes from 0 to 1 positional arguments but 2 were given
 ```
 
-Fix the problems by adding another string argument to `def Hello`
+Fix the problems by adding another string argument to `def hello`
 
 ```python
 def hello(name: str = None, language: str) -> str:
@@ -276,7 +276,7 @@ def hello(name: str = None, language: str) -> str:
 
 Docstrings should follow function's behaviors, this is a good time to update function's docstring.s
 
-When you run the test again it will complain again about the order of the parameters in our `Hello` function
+When you run the test again it will complain again about the order of the parameters in our `hello` function
 
 ```text
 E       def hello(name: str = None, language: str) -> str:
@@ -433,7 +433,7 @@ We can and should refactor our tests.
 ```python
 import pytest
 
-from hello import Hello
+from hello import hello
 
 
 def test_hello_without_name():

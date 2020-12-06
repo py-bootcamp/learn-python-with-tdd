@@ -1,6 +1,6 @@
 import pytest
 
-from hello import Hello
+from hello import hello
 
 
 def test_hello_without_name():
