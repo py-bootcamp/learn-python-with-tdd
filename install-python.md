@@ -56,7 +56,7 @@ pip install pytest
 
 Editors are like ice creams flavors, the choice is really personal and you'll have to find one that fits your need. If you don't have one I suggest you to check [VSCodium](https://github.com/VSCodium/vscodium), [VSCode](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/).
 
-Both VSCodium and VSCode have a really good Python extension (https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+Both VSCodium and VSCode have a really good [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 
 ## Refactoring and your tooling
 
