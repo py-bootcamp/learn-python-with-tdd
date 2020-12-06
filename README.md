@@ -15,12 +15,11 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 
 1. [Install Python](install-python.md) - Set up environment for productivity.
 2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, dict, write your first Python program and write your first test.
-3. [Integers](integers.md) - Further Explore function declaration syntax and learn new ways to improve the documentation of your code.
 
 ## Contributing
 
 * _This project is work in progress_ If you would like to contribute, please do get in touch.
-* Read [contributing.md](https://github.com/py-bootcamp/learn-python-with-tdd/blob/master/contributing.md) for guidelines
+* Read [contributing.md](contributing.md) for guidelines
 * Any ideas? Create an issue
 
 ## Who this is for
@@ -44,6 +43,5 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 ## Formats
 
 - [Gitbook](https://learn-python-with-tdd.pybootcamp.com)
-
 
 [MIT license](LICENSE.md)
