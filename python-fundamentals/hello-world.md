@@ -1,6 +1,6 @@
 # Hello, World
 
-**[You can find all the code for this chapter here](https://github.com/py-bootcamp/learn-python-with-tdd/tree/master/hello-world)**
+[**You can find all the code for this chapter here**](https://github.com/py-bootcamp/learn-python-with-tdd/tree/master/hello-world)
 
 It is traditional for your first program in a new language to be [Hello, World](https://en.m.wikipedia.org/wiki/%22Hello,_World!%22_program).
 
@@ -37,7 +37,7 @@ def hello() -> str:
 print(hello())
 ```
 
-We have created a new function with `def` called `hello`, this function doesn't accept any parameter but returns a `string` (str).
+We have created a new function with `def` called `hello`, this function doesn't accept any parameter but returns a `string` \(str\).
 
 > Python is a dynamically-typed language, while types are optionals and not used at runtime they help describing your code.
 
@@ -112,7 +112,7 @@ E       TypeError: hello() takes 0 positional arguments but 1 was given
 
 Python provides great error messages. In this case Python is telling you what you need to do to continue. We have to change our function `Hello` to accept an argument.
 
-Edit the `hello` function to accept an argument of type str (string)
+Edit the `hello` function to accept an argument of type str \(string\)
 
 ```python
 def hello(name: str) -> str:
@@ -146,17 +146,15 @@ When you run the tests they should now pass. Normally as part of the TDD cycle w
 
 ### A note on source control
 
-At this point, if you are using source control \(which you should!\) I would
-`commit` the code as it is. We have working software backed by a test.
+At this point, if you are using source control \(which you should!\) I would `commit` the code as it is. We have working software backed by a test.
 
-I _wouldn't_ push to master though, because I plan to refactor next. It is nice
-to commit at this point in case you somehow get into a mess with refactoring - you can always go back to the working version.
+I _wouldn't_ push to master though, because I plan to refactor next. It is nice to commit at this point in case you somehow get into a mess with refactoring - you can always go back to the working version.
 
 There's not a lot to refactor here, but we can introduce another language feature, _constants_.
 
 ### Constants
 
-You can't really define constants in Python, but there's a convention on how to represent variables that are meant to be constant: `all capital letters with underscores separating words` ([more here](https://www.python.org/dev/peps/pep-0008/#constants))
+You can't really define constants in Python, but there's a convention on how to represent variables that are meant to be constant: `all capital letters with underscores separating words` \([more here](https://www.python.org/dev/peps/pep-0008/#constants)\)
 
 We can now refactor our code
 
@@ -180,13 +178,13 @@ Start by writing a new failing test
 ```python
 def test_hello_without_name():
     got = hello()
-	want = "Hello, World"
+    want = "Hello, World"
 
     assert got == want
 
 def test_hello_with_name():
     got = hello("Christian")
-	want = "Hello, Christian"
+    want = "Hello, Christian"
 
     assert got == want
 ```
@@ -199,8 +197,8 @@ ENGLISH_HELLO_PREFIX = "Hello"
 
 def hello(name: str = None) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
@@ -215,8 +213,7 @@ If we run our tests we should see it satisfies the new requirement and we haven'
 
 ### Back to source control
 
-Now we are happy with the code I would amend the previous commit so we only
-check in the lovely version of our code with its test.
+Now we are happy with the code I would amend the previous commit so we only check in the lovely version of our code with its test.
 
 ### Discipline
 
@@ -248,7 +245,7 @@ Write a test for a user passing in Spanish. Add it to the existing suite.
 ```python
 def test_hello_in_spanish():
     got = hello("Christian", "Spanish")
-	want = "Hola, Christian"
+    want = "Hola, Christian"
 
     assert got == want
 ```
@@ -266,8 +263,8 @@ Fix the problems by adding another string argument to `def hello`
 ```python
 def hello(name: str = None, language: str) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
@@ -289,8 +286,8 @@ We can fix this error by making `language` optional as well
 ```python
 def hello(name: str = None, language: str = None) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
@@ -308,13 +305,13 @@ We can use `if` here to check the language is equal to "Spanish" and if so chang
 ```python
 def hello(name: str = None, language: str = None) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
-	if language == "Spanish":
-		return f"Hola, {name}"
+    if language == "Spanish":
+        return f"Hola, {name}"
 
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 ```
@@ -331,13 +328,13 @@ SPANISH_HELLO_PREFIX = "Hola"
 
 def hello(name: str = None, language: str = None) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
-	if language == SPANISH:
-		return f"{SPANISH_HELLO_PREFIX}, {name}"
+    if language == SPANISH:
+        return f"{SPANISH_HELLO_PREFIX}, {name}"
 
     return f"{ENGLISH_HELLO_PREFIX}, {name}"
 ```
@@ -353,8 +350,8 @@ You may have written something that looks roughly like this
 ```python
 def hello(name: str = None, language: str = None) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
@@ -383,8 +380,8 @@ LANGUAGES = {
 
 def hello(name: str = None, language: str = None) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
@@ -393,7 +390,7 @@ def hello(name: str = None, language: str = None) -> str:
     return f"{prefix}, {name}"
 ```
 
-A dictionary offers lots of handy functionalities, in this case we are using the `get` method look for a key (`language`) and in case is not available return a default (`ENGLISH_HELLO_PREFIX`).
+A dictionary offers lots of handy functionalities, in this case we are using the `get` method look for a key \(`language`\) and in case is not available return a default \(`ENGLISH_HELLO_PREFIX`\).
 
 Write a test to now include a greeting in the language of your choice and you should see how simple it is to extend our _amazing_ function.
 
@@ -408,8 +405,8 @@ def prefix(language: str) -> str:
 
 def hello(name: str = None, language: str = None) -> str:
     """Return a personalized greeting.
-	Defaulting to `Hello, World` if no name and language are passed.
-	"""
+    Defaulting to `Hello, World` if no name and language are passed.
+    """
     if not name:
         name = "World"
 
@@ -492,3 +489,4 @@ By now you should have some understanding of:
 In our case we've gone from `hello()` to `hello("name")`, to `hello("name", "French")` in small, easy to understand steps.
 
 This is of course trivial compared to "real world" software but the principles still stand. TDD is a skill that needs practice to develop but by being able to break problems down into smaller components that you can test you will have a much easier time writing software.
+

@@ -1,6 +1,6 @@
 # Integers
 
-**[You can find all the code for this chapter here](https://github.com/py-bootcamp/learn-python-with-tdd/tree/master/integers)**
+[**You can find all the code for this chapter here**](https://github.com/py-bootcamp/learn-python-with-tdd/tree/master/integers)
 
 Integers work as you would expect. Let's write an `add` function to try things out. Create a test file called `test_adder.py` and write this code.
 
@@ -59,7 +59,7 @@ Ah hah! Foiled again, TDD is a sham right?
 
 We could write another test, with some different numbers to force that test to fail but that feels like [a game of cat and mouse](https://en.m.wikipedia.org/wiki/Cat_and_mouse).
 
-Once we're more familiar with Python's syntax I will introduce a technique called *"Property Based Testing"*, which would stop annoying developers and help you find bugs.
+Once we're more familiar with Python's syntax I will introduce a technique called _"Property Based Testing"_, which would stop annoying developers and help you find bugs.
 
 For now, let's fix it properly
 
@@ -74,7 +74,7 @@ If you re-run the tests they should pass.
 
 There's not a lot in the _actual_ code we can really improve on here.
 
-We explored earlier the value of doing type annotations (putting `str` and `int`) in the documentation.
+We explored earlier the value of doing type annotations \(putting `str` and `int`\) in the documentation.
 
 This is great because it aids the usability of code you are writing. It is preferable that a user can understand the usage of your code by just looking at the type signature and documentation.
 
@@ -91,3 +91,4 @@ What we have covered:
 * More practice of the TDD workflow
 * Integers, addition
 * Writing better documentation so users of our code can understand its usage quickly
+

@@ -12,9 +12,9 @@ If you don't feel confident to submit your own guide, submitting an issue for so
 
 ### ⚠️ Get feedback quickly for new content ⚠️
 
-- TDD teaches us to work iteratively and get feedback and I strongly suggest you do the same if you wish to contribute
-    - Open a PR with your first test and implementation, discuss your approach so I can offer feedback and course correct
-- This is of course open-source but I do have strong opinions on the content. The sooner you talk to me the better.
+* TDD teaches us to work iteratively and get feedback and I strongly suggest you do the same if you wish to contribute
+  * Open a PR with your first test and implementation, discuss your approach so I can offer feedback and course correct
+* This is of course open-source but I do have strong opinions on the content. The sooner you talk to me the better.
 
 ## Style guide
 
@@ -30,3 +30,4 @@ If you don't feel confident to submit your own guide, submitting an issue for so
   * Brevity is king.
 * Your section should have a runnable application at the end, so users can see it in action and play with it.
 * All tests should pass.
+
