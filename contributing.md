@@ -21,9 +21,9 @@ If you don't feel confident to submit your own guide, submitting an issue for so
 * Always be reinforcing the TDD cycle. Take a look at the [Chapter Template](template.md).
 * Emphasis on iterating over functionality driven by tests. The Hello, world example works well because we gradually make it more sophisticated and learning new techniques _driven_ by the tests. For example:
   * `hello()` &lt;- how to write functions, return types.
-  * `Hello(name: str)` &lt;- arguments, constants.
-  * `Hello(name string)` &lt;- default to "world" using `if`.
-  * `Hello(name: str, language: str)` &lt;- `dict`.
+  * `hello(name: str)` &lt;- arguments, constants.
+  * `hello(name string)` &lt;- default to "world" using `if`.
+  * `hello(name: str, language: str)` &lt;- `dict`.
 * Try and minimise the surface area of required knowledge.
   * Thinking of examples that showcase what you're trying to teach without confusing the reader with other features is important.
   * For example you can learn about `method`s without understanding inheritance or MRO.
