@@ -44,6 +44,3 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 ## Formats
 
 * [Gitbook](https://learn-python-with-tdd.pybootcamp.com)
-
-[MIT license](LICENSE.md)
-
