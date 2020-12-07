@@ -20,7 +20,7 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 ## Contributing
 
 * _This project is work in progress_ If you would like to contribute, please do get in touch.
-* Read [contributing.md](contributin.md) for guidelines
+* Read [contributing.md](contributing.md) for guidelines
 * Any ideas? Create an issue
 
 ## Who this is for
