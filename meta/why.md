@@ -6,7 +6,7 @@
 
 The promise of software is that it can change. This is why it is called _soft_ ware, it is malleable compared to hardware. A great engineering team should be an amazing asset to a company, writing systems that can evolve with a business to keep delivering value.
 
-So why are we so bad at it? How many projects do you hear about that outright fail? Or become "legacy" and have to be entirely re-written (and the re-writes often fail too!)
+So why are we so bad at it? How many projects do you hear about that outright fail? Or become "legacy" and have to be entirely re-written \(and the re-writes often fail too!\)
 
 How does a software system "fail" anyway? Can't it just be changed until it's correct? That's what we're promised!
 
@@ -42,14 +42,14 @@ We **have** to keep managing the complexity of the system as the knowledge of ou
 
 There are _many_ facets of software engineering that keeps software malleable, such as:
 
-- Developer empowerment
-- Generally "good" code. Sensible separation of concerns, etc etc
-- Communication skills
-- Architecture
-- Observability
-- Deployability
-- Automated tests
-- Feedback loops
+* Developer empowerment
+* Generally "good" code. Sensible separation of concerns, etc etc
+* Communication skills
+* Architecture
+* Observability
+* Deployability
+* Automated tests
+* Feedback loops
 
 I am going to focus on refactoring. It's a phrase that gets thrown around a lot "we need to refactor this" - said to a developer on their first day of programming without a second thought.
 
@@ -97,8 +97,7 @@ def hello(name: str = None, language: str = None) -> str:
     return f"Hello, {name}"
 ```
 
-Having dozens of `if` statements doesn't feel good and we have a duplication of concatenating a language specific greeting with `, ` and the `name.` So I'll refactor the code.
-
+Having dozens of `if` statements doesn't feel good and we have a duplication of concatenating a language specific greeting with `,` and the `name.` So I'll refactor the code.
 
 ```python
 ENGLISH_HELLO_PREFIX = "Hello"
@@ -138,9 +137,9 @@ Those who choose not to write tests will typically be reliant on manual testing.
 
 **In order to safely refactor you need unit tests** because they provide
 
-- Confidence you can reshape code without worrying about changing behaviour
-- Documentation for humans as to how the system should behave
-- Much faster and more reliable feedback than manual testing
+* Confidence you can reshape code without worrying about changing behaviour
+* Documentation for humans as to how the system should behave
+* Much faster and more reliable feedback than manual testing
 
 #### An example in Python
 
@@ -158,9 +157,9 @@ At the command line I can run `pytest` and get immediate feedback as to whether 
 
 You want to get in to a state where you are doing
 
-- Small refactor
-- Run tests
-- Repeat
+* Small refactor
+* Run tests
+* Repeat
 
 All within a very tight feedback loop so you don't go down rabbit holes and make mistakes.
 
@@ -168,7 +167,7 @@ Having a project where all your key behaviours are unit tested and give you feed
 
 ## If unit tests are so great, why is there sometimes resistance to writing them?
 
-On the one hand you have people (like me) saying that unit tests are important for the long term health of your system because they ensure you can keep refactoring with confidence.
+On the one hand you have people \(like me\) saying that unit tests are important for the long term health of your system because they ensure you can keep refactoring with confidence.
 
 On the other you have people describing experiences of unit tests actually _hindering_ refactoring.
 
@@ -196,7 +195,7 @@ _It's not actually important that the square was formed out of triangles_ but **
 
 When I hear people complaining about unit tests it is often because the tests are at the wrong abstraction level. They're testing implementation details, overly spying on collaborators and mocking too much.
 
-I believe it stems from a misunderstanding of what unit tests are and chasing vanity metrics (test coverage).
+I believe it stems from a misunderstanding of what unit tests are and chasing vanity metrics \(test coverage\).
 
 If I am saying just test behaviour, should we not just only write system/black-box tests? These kind of tests do have lots of value in terms of verifying key user journeys but they are typically expensive to write and slow to run. For that reason they're not too helpful for _refactoring_ because the feedback loop is slow. In addition black box tests don't tend to help you very much with root causes compared to unit tests.
 
@@ -206,7 +205,7 @@ So what _is_ the right abstraction level?
 
 Forgetting about tests for a moment, it is desirable to have within your system self-contained, decoupled "units" centered around key concepts in your domain.
 
-I like to imagine these units as simple Lego bricks which have coherent APIs that I can combine with other bricks to make bigger systems. Underneath these APIs there could be dozens of things (types, functions et al) collaborating to make them work how they need to.
+I like to imagine these units as simple Lego bricks which have coherent APIs that I can combine with other bricks to make bigger systems. Underneath these APIs there could be dozens of things \(types, functions et al\) collaborating to make them work how they need to.
 
 For instance if you were writing a bank in Go, you might have an "account" package. It will present an API that does not leak implementation detail and is easy to integrate with.
 
@@ -220,30 +219,30 @@ If you have these units that follow these properties you can write unit tests ag
 
 We've covered
 
-- Refactoring
-- Unit tests
-- Unit design
+* Refactoring
+* Unit tests
+* Unit design
 
 What we can start to see is that these facets of software design reinforce each other.
 
 ### Refactoring
 
-- Gives us signals about our unit tests. If we have to do manual checks, we need more tests. If tests are wrongly failing then our tests are at the wrong abstraction level (or have no value and should be deleted).
-- Helps us handle the complexities within and between our units.
+* Gives us signals about our unit tests. If we have to do manual checks, we need more tests. If tests are wrongly failing then our tests are at the wrong abstraction level \(or have no value and should be deleted\).
+* Helps us handle the complexities within and between our units.
 
 ### Unit tests
 
-- Give a safety net to refactor.
-- Verify and document the behaviour of our units.
+* Give a safety net to refactor.
+* Verify and document the behaviour of our units.
 
-### (Well designed) units
+### \(Well designed\) units
 
-- Easy to write _meaningful_ unit tests.
-- Easy to refactor.
+* Easy to write _meaningful_ unit tests.
+* Easy to refactor.
 
 Is there a process to help us arrive at a point where we can constantly refactor our code to manage complexity and keep our systems malleable?
 
-## Why Test Driven Development (TDD)
+## Why Test Driven Development \(TDD\)
 
 Some people might take Lehman's quotes about how software has to change and overthink elaborate designs, wasting lots of time upfront trying to create the "perfect" extensible system and end up getting it wrong and going nowhere.
 
@@ -251,17 +250,17 @@ This is the bad old days of software where an analyst team would spend 6 months 
 
 I say bad old days but this still happens!
 
-Agile teaches us that we need to work iteratively, starting small and evolving the software so that we get fast feedback on the design of our software and how it works with real users;  TDD enforces this approach.
+Agile teaches us that we need to work iteratively, starting small and evolving the software so that we get fast feedback on the design of our software and how it works with real users; TDD enforces this approach.
 
 TDD addresses the laws that Lehman talks about and other lessons hard learned through history by encouraging a methodology of constantly refactoring and delivering iteratively.
 
 ### Small steps
 
-- Write a small test for a small amount of desired behaviour
-- Check the test fails with a clear error (red)
-- Write the minimal amount of code to make the test pass (green)
-- Refactor
-- Repeat
+* Write a small test for a small amount of desired behaviour
+* Check the test fails with a clear error \(red\)
+* Write the minimal amount of code to make the test pass \(green\)
+* Refactor
+* Repeat
 
 As you become proficient, this way of working will become natural and fast.
 
@@ -271,8 +270,9 @@ You'll always be driving small & useful functionality comfortably backed by the 
 
 ## Wrapping up
 
-- The strength of software is that we can change it. _Most_ software will require change over time in unpredictable ways; but don't try and over-engineer because it's too hard to predict the future.
-- Instead we need to make it so we can keep our software malleable. In order to change software we have to refactor it as it evolves or it will turn into a mess
-- A good test suite can help you refactor quicker and in a less stressful manner
-- Writing good unit tests is a design problem so think about structuring your code so you have meaningful units that you can integrate together like Lego bricks.
-- TDD can help and force you to design well factored software iteratively, backed by tests to help future work as it arrives.
+* The strength of software is that we can change it. _Most_ software will require change over time in unpredictable ways; but don't try and over-engineer because it's too hard to predict the future.
+* Instead we need to make it so we can keep our software malleable. In order to change software we have to refactor it as it evolves or it will turn into a mess
+* A good test suite can help you refactor quicker and in a less stressful manner
+* Writing good unit tests is a design problem so think about structuring your code so you have meaningful units that you can integrate together like Lego bricks.
+* TDD can help and force you to design well factored software iteratively, backed by tests to help future work as it arrives.
+
