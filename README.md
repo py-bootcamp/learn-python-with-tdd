@@ -1,26 +1,26 @@
 # Learn Python with TDD
 
-This project is based and inspired by [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/)
+This project is based and inspired by [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/).
 
 ## Why
 
 * Explore the Python language by writing tests
 * **Get a grounding with TDD**. Python is a good language for learning TDD because it is a simple language to learn and has a powerful testing library
 * Be confident that you'll be able to start writing robust, well-tested systems in Python
-* [Watch a video, or read about why unit testing and TDD is important](meta/why.md)
+* [Watch a video, or read about why unit testing and TDD is important](why.md)
 
 ## Table of contents
 
 ### Python fundamentals
 
-1. [Install Python](python-fundamentals/install-python.md) - Set up environment for productivity.
-2. [Hello, world](python-fundamentals/hello-world.md) - Declaring variables, constants, if/else statements, dict, write your first Python program and write your first test.
-3. [Integers](python-fundamentals/integers.md) - Further Explore function and learn new ways to improve the documentation of your code.
+1. [Install Python](install-python.md) - Set up environment for productivity.
+2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, dict, write your first Python program and write your first test.
+3. [Integers](integers.md) - Further Explore function and learn new ways to improve the documentation of your code.
 
 ## Contributing
 
 * _This project is work in progress_ If you would like to contribute, please do get in touch.
-* Read [contributing.md](meta/contributing.md) for guidelines
+* Read [contributing.md](contributing.md) for guidelines
 * Any ideas? Create an issue
 
 ## Who this is for
@@ -45,5 +45,5 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 
 * [Gitbook](https://learn-python-with-tdd.pybootcamp.com)
 
-[MIT license](https://github.com/py-bootcamp/learn-python-with-tdd/tree/607f257935e9a8e9d67c14d8e00ee1e5d36e5082/LICENSE.md)
+[MIT license](LICENSE.md)
 
