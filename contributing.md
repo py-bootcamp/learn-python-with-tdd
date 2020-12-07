@@ -26,7 +26,7 @@ If you don't feel confident to submit your own guide, submitting an issue for so
   * `Hello(name: str, language: str)` &lt;- `dict`.
 * Try and minimise the surface area of required knowledge.
   * Thinking of examples that showcase what you're trying to teach without confusing the reader with other features is important.
-  * For example you can learn about `struct`s without understanding pointers.
+  * For example you can learn about `method`s without understanding inheritance or MRO.
   * Brevity is king.
 * Your section should have a runnable application at the end, so users can see it in action and play with it.
 * All tests should pass.
