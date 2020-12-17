@@ -7,6 +7,7 @@
 * [Install Python](install-python.md)
 * [Hello, World](hello-world.md)
 * [Integers](integers.md)
+* [Iteration](iteration.md)
 
 ## Meta
 
