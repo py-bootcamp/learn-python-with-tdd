@@ -1,5 +1,6 @@
 COUNTER: int = 5
 
+
 def repeat(character: str) -> str:
     """Repeat returns character repeated 5 times."""
     word = ""
