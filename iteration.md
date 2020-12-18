@@ -43,9 +43,9 @@ Isn't it nice to know you already know enough Python to write tests for some bas
 
 ## Write enough code to make it pass
 
-The `for` syntax is bit different comparade to most C-like languages.
+The `for` syntax is bit different compared to most C-like languages.
 
-You don't have to create counters and increase them, but you can use `range`.
+You don't have to create counters and increase them, you can use `range`.
 
 ```python
 def repeat(character: str) -> str:
@@ -57,13 +57,15 @@ def repeat(character: str) -> str:
     return word
 ```
 
-Unlike other languages like C, Java, or JavaScript there are no braces, Python uses `indentation`. You might wonder what is happening in the row
+Unlike other languages like C, Java, or JavaScript there are no braces, Python uses `indentation`.
+
+You might wonder what is happening in the row
 
 ```python
     for counter in range(5):
 ```
 
-`range` returns an iterator, when you consume an iterator, you get an element of the iterator.
+`range` returns an iterator, when you consume an iterator you get an element of the iterator.
 
 In this case that line can be translated to
 
@@ -71,17 +73,17 @@ In this case that line can be translated to
     for counter in [0, 1, 2, 3, 4]:
 ```
 
-during every cycle of the loop `counter` get assigned an element, 0, 1, 2 and so on.
+during every cycle of the loop `counter` get assigned an element: 0, 1, 2 and so on.
 
 Once we consumed all the element (when the iterator is _exhausted_) we exit the loop.
 
-That's pretty! compared to other languages
+That's pretty neat! compared to other languages
 
 ```go
 	for i := 0; i < 5; i++
 ```
 
-Python can be more expressive.
+Python can be more _expressive_.
 
 Run the test and it should pass.
 
@@ -122,15 +124,13 @@ Test is failing, let's fix it!
 
 ### One last refactor
 
-We want to extend allow the caller to specify how many times the character is repeated:
+Python support operator _overloading_. Operators, like `+` or `*`, can have a different behaviour depending on the type of the operands. While `a * 5` doesn't have an arithmetical sense, in Python it does and it repeats `a` five times.
 
 ```python
 def repeat(character: str, counter: int) -> str:
     """Repeat returns character repeated `counter` times."""
     return character * counter
 ```
-
-Test is failing, let's fix it!
 
 ## Practice exercises
 
@@ -140,3 +140,4 @@ Test is failing, let's fix it!
 
 * More TDD practice
 * Learned `for`
+* Learned about `operator overloading`
