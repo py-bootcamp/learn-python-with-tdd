@@ -1,6 +1,6 @@
 # Iteration
 
-**[You can find all the code for this chapter here](https://github.com/py-bootcamp/learn-python-with-tdd/tree/main/for)**
+[**You can find all the code for this chapter here**](https://github.com/py-bootcamp/learn-python-with-tdd/tree/main/for)
 
 To do stuff repeatedly in Python, you'll need `for` or `while`.
 
@@ -34,7 +34,7 @@ All you need to do right now is enough to make it compile so you can check your 
 ```python
 def repeat(character: str) -> str:
     """Repeat returns character repeated 5 times."""
-	return ""
+    return ""
 ```
 
 Isn't it nice to know you already know enough Python to write tests for some basic problems? This means you can now play with the production code as much as you like and know it's behaving as you'd hope.
@@ -75,12 +75,12 @@ In this case that line can be translated to
 
 during every cycle of the loop `counter` get assigned an element: 0, 1, 2 and so on.
 
-Once we consumed all the element (when the iterator is _exhausted_) we exit the loop.
+Once we consumed all the element \(when the iterator is _exhausted_\) we exit the loop.
 
 That's pretty neat! compared to other languages
 
 ```go
-	for i := 0; i < 5; i++
+    for i := 0; i < 5; i++
 ```
 
 Python can be more _expressive_.
@@ -121,7 +121,6 @@ def test_repeat():
 
 Test is failing, let's fix it!
 
-
 ### One last refactor
 
 Python support operator _overloading_. Operators, like `+` or `*`, can have a different behaviour depending on the type of the operands. While `a * 5` doesn't have an arithmetical sense, in Python it does and it repeats `a` five times.
@@ -141,3 +140,4 @@ def repeat(character: str, counter: int) -> str:
 * More TDD practice
 * Learned `for`
 * Learned about `operator overloading`
+

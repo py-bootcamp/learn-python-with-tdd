@@ -276,5 +276,6 @@ You'll always be driving small & useful functionality comfortably backed by the 
 
 ## Video
 
-- [Chris James: How to not build legacy systems that everyone hates](https://www.youtube.com/watch?v=Kwtit8ZEK7U)
-- [Ian Cooper: TDD, Where Did It All Go Wrong](https://www.youtube.com/watch?v=EZ05e7EMOLM)
+* [Chris James: How to not build legacy systems that everyone hates](https://www.youtube.com/watch?v=Kwtit8ZEK7U)
+* [Ian Cooper: TDD, Where Did It All Go Wrong](https://www.youtube.com/watch?v=EZ05e7EMOLM)
+
