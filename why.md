@@ -1,7 +1,5 @@
 # Why unit tests and how to make them work for you
 
-[Here's a link to a video of Chris James chatting about this topic](https://www.youtube.com/watch?v=Kwtit8ZEK7U)
-
 ## Software
 
 The promise of software is that it can change. This is why it is called _soft_ ware, it is malleable compared to hardware. A great engineering team should be an amazing asset to a company, writing systems that can evolve with a business to keep delivering value.
@@ -276,3 +274,7 @@ You'll always be driving small & useful functionality comfortably backed by the 
 * Writing good unit tests is a design problem so think about structuring your code so you have meaningful units that you can integrate together like Lego bricks.
 * TDD can help and force you to design well factored software iteratively, backed by tests to help future work as it arrives.
 
+## Video
+
+- [Chris James chatting about this topic](https://www.youtube.com/watch?v=Kwtit8ZEK7U)
+- [Ian Cooper - TDD, Where Did It All Go Wrong](https://www.youtube.com/watch?v=EZ05e7EMOLM)

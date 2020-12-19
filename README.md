@@ -1,4 +1,4 @@
-# Learn Python with TDD
+# Learn Python with Test-driven development (TDD)
 
 This project is based and inspired by [Learn Go With Tests](https://quii.gitbook.io/learn-go-with-tests/).
 
