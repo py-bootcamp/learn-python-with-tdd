@@ -1,4 +1,4 @@
-# Arrays and slices
+# Lists
 
 **[You can find all the code for this chapter here](https://github.com/py-bootcamp/learn-python-with-tdd/tree/master/lists)**
 
