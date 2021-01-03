@@ -436,7 +436,8 @@ too, including lists. So you can list of lists of lists.
 
 [Check out the Python documentation on lists][documentation-lists] for an in-depth look into
 lists. Try writing more tests to demonstrate what you learn from reading it.
-[Parametrize documentation][documentation-parametrize] if you wanne learn more about pytest parametrize.
+
+It's worth also checking the [Pytest parametrize documentation][documentation-parametrize] if you wanna learn more about it.
 
 [for]: ../iteration.md#
 [documentation-lists]: https://docs.python.org/3/library/stdtypes.html#lists
