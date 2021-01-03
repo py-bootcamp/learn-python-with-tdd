@@ -392,7 +392,7 @@ def sum_all_tails(*numbers_to_sum: List[float]) -> List[float]:
 Lists can be sliced! The syntax is `list[low:high]` If you omit the value on
 one of the sides of the `:` it captures everything to the side of it. In our
 case, we are saying "take from 1 to the end" with `numbers[1:]`. You might want to
-invest some time in writing other tests around slices and experimenting with the
+invest some time in writing other tests around lists and experimenting with the
 slice operator so you can be familiar with it.
 
 ## Refactor
@@ -441,7 +441,7 @@ We've used lists with integers and floats but they work with any other type
 too, including lists. So you can list of lists of lists.
 
 [Check out the Python documentation on lists][documentation-lists] for an in-depth look into
-slices. Try writing more tests to demonstrate what you learn from reading it.
+lists. Try writing more tests to demonstrate what you learn from reading it.
 
 [for]: ../iteration.md#
 [documentation-lists]: https://docs.python.org/3/tutorial/datastructures.html#data-structures
