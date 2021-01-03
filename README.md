@@ -14,9 +14,10 @@ This project is based and inspired by [Learn Go With Tests](https://quii.gitbook
 ### Python fundamentals
 
 1. [Install Python](python-fundamentals/install-python.md) - Set up environment for productivity.
-2. [Hello, world](python-fundamentals/hello-world.md) - Declaring variables, constants, if/else statements, dict, write your first Python program and write your first test.
+2. [Hello, world](hello-world.md) - Declaring variables, constants, if/else statements, dict, write your first Python program and write your first test.
 3. [Integers](python-fundamentals/integers.md) - Further Explore function and learn new ways to improve the documentation of your code.
-4. [Iteration](python-fundamentals/iteration.md) - Learn about `for`.
+4. [Iteration](python-fundamentals/iteration.md) - Learn about `for` and `range`.
+5. [Lists](lists.md) - Learn about lists, `len`, `*args` and test coverage.
 
 ## Contributing
 
