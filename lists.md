@@ -4,11 +4,11 @@
 
 Lists allow you to store multiple elements of different types in a particular order.
 
-When you have a lists, it is very common to have to iterate over them. So let's
+When you have a list, it is very common to have to iterate over them. So let's
 use [our new-found knowledge of `for`](iteration.md) to make a `sum_numbers` function. `sum_numbers` will
 take a list of numbers and return the total.
 
-Let's use our TDD skills
+Let's use our TDD skills.
 
 ## Write the test first
 
@@ -36,7 +36,7 @@ numbers = list()
 
 ## Try to run the test
 
-By running `pytest -v .` the test will fail with `ModuleNotFoundError: No module named 'sum'`
+By running `pytest -v .` the test will fail with `ModuleNotFoundError: No module named 'sum_numbers'`
 
 ## Write the minimal amount of code for the test to run and check the failing test output
 
@@ -111,12 +111,11 @@ def sum_numbers(numbers: List[int]) -> int:
 
 `sum_numbers` accepts a list of numbers and return an integer.
 
-## Extend our tests to cover an edge case
-
+## Extend our tests
 We want to extend our tests to cover two test cases:
 
-- if the pass an empty list the sum should be zero
-- `sum_numbers` should work also with `float`
+- if we pass an empty list the sum should be zero
+- `sum_numbers` should work also with `float`s
 
 ```python
 from sum_numbers import sum_numbers
@@ -169,8 +168,8 @@ def sum_numbers(numbers: List[float]) -> float:
     return total
 ```
 
-From a type perspective, `float` includes `int` (https://www.python.org/dev/peps/pep-0484/#id27),
-so the new annotation says that `numbers` can be a list of floats or ints, and `sum_numbers` returns a float.
+From a type perspective, [`float` includes `int`](https://www.python.org/dev/peps/pep-0484/#id27),
+so the new annotation says that `numbers` can be a list of floats or ints, and `sum_numbers` returns a float or int.
 
 ## Refactor tests
 
@@ -207,16 +206,12 @@ def test_sum_with_floats():
     assert got == want
 ```
 
-It is important to question the value of your tests. It should not be a goal to
-have as many tests as possible, but rather to have as much _confidence_ as
-possible in your code base. Having too many tests can turn in to a real problem
-and it just adds more overhead in maintenance. **Every test has a cost**.
+It is important to question the value of your tests. It should not be a goal to have as many tests as possible, but rather to have as much _confidence_ as possible in your code base. Having too many tests can turn in to a real problem and it just adds more overhead in maintenance. **Every test has a cost**.
 
-In our case, you can see that having two tests for this function is redundant.
-If it works for a list of ints it's very likely it'll work for a list of
-any floats.
+In our case, you can see that having `test_sum` and `test_sum_with_floats` is redundant.
+If it works for a list of ints it's very likely it'll work for a list of any floats.
 
-`Pytest` support test coverage with the plugin [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/readme.html), which can help identify areas of your code you have not covered. I do want to stress that having 100% coverage should not be your goal, it's just a tool to give you an idea of your coverage. If you have been strict with TDD, it's quite likely you'll have close to 100% coverage anyway.
+`Pytest` supports test coverage with the plugin [pytest-cov](https://pytest-cov.readthedocs.io/en/latest/readme.html), which can help identify areas of your code you have not covered. __I do want to stress that having 100% coverage should not be your goal__, it's just a tool to give you an idea of your coverage. If you have been strict with TDD, it's quite likely you'll have close to 100% coverage anyway.
 
 With your virtual environment active, try running
 
@@ -389,11 +384,9 @@ def sum_all_tails(*numbers_to_sum: List[float]) -> List[float]:
     return [sum_numbers(numbers[1:]) for numbers in numbers_to_sum]
 ```
 
-Lists can be sliced! The syntax is `list[low:high]` If you omit the value on
-one of the sides of the `:` it captures everything to the side of it. In our
-case, we are saying "take from 1 to the end" with `numbers[1:]`. You might want to
-invest some time in writing other tests around lists and experimenting with the
-slice operator so you can be familiar with it.
+Lists can be sliced! The syntax is `list[low:high]` If you omit the value on one of the sides of the `:` it captures everything to the side of it. In our case, we are saying "take from 1 to the end" with `numbers[1:]`.
+
+You might want to invest some time in writing other tests around lists and experimenting with the slice operator so you can be familiar with it.
 
 ## Refactor
 
@@ -415,7 +408,7 @@ def test_sum_empty_tails():
 
 ## Refactor
 
-Our tests have some repeated code around assertion again, let's extract that into a function
+Our tests have some repeated code, let's use `parametrize` again
 
 ```python
 @pytest.mark.parametrize(
@@ -435,6 +428,7 @@ We have covered
   * The various ways to make them
   * How you can _append` items to a list
   * How to slice, lists!
+* Pytest parametrize
 * Test coverage tool
 
 We've used lists with integers and floats but they work with any other type
@@ -442,6 +436,8 @@ too, including lists. So you can list of lists of lists.
 
 [Check out the Python documentation on lists][documentation-lists] for an in-depth look into
 lists. Try writing more tests to demonstrate what you learn from reading it.
+[Parametrize documentation][documentation-parametrize] if you wanne learn more about pytest parametrize.
 
 [for]: ../iteration.md#
 [documentation-lists]: https://docs.python.org/3/library/stdtypes.html#lists
+[documentation-parametrize]: https://docs.pytest.org/en/stable/parametrize.html
