@@ -444,4 +444,4 @@ too, including lists. So you can list of lists of lists.
 lists. Try writing more tests to demonstrate what you learn from reading it.
 
 [for]: ../iteration.md#
-[documentation-lists]: https://docs.python.org/3/tutorial/datastructures.html#data-structures
+[documentation-lists]: https://docs.python.org/3/library/stdtypes.html#lists
