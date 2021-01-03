@@ -4,10 +4,10 @@
 
 ## Python fundamentals
 
-* [Install Python](python-fundamentals/install-python.md)
+* [Install Python](install-python.md)
 * [Hello, World](hello-world.md)
-* [Integers](python-fundamentals/integers.md)
-* [Iteration](python-fundamentals/iteration.md)
+* [Integers](integers.md)
+* [Iteration](iteration.md)
 * [Lists](lists.md)
 
 ## Meta
