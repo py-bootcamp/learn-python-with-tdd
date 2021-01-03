@@ -4,7 +4,7 @@
 
 ## Python fundamentals
 
-* [Install Python](install-python.md)
+* [Install Python](/install-python.md)
 * [Hello, World](hello-world.md)
 * [Integers](integers.md)
 * [Iteration](iteration.md)
