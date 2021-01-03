@@ -1,6 +1,6 @@
 # Iteration
 
-[**You can find all the code for this chapter here**](https://github.com/py-bootcamp/learn-python-with-tdd/tree/main/for)
+[**You can find all the code for this chapter here**](https://github.com/py-bootcamp/learn-python-with-tdd/tree/master/for)
 
 To do stuff repeatedly in Python, you'll need `for` or `while`.
 
